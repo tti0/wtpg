@@ -1,0 +1,76 @@
+extends layout 
+
+block content
+    .columns.is-vcentered
+        .column 
+            .box.content
+                ul
+                    li Last updated at&nbsp;
+                        strong #{gotFlightsTime}
+                    li Searching for flights within a&nbsp;
+                        strong #{searchParameters.radius} nm
+                        | &nbsp;(square) radius of&nbsp;
+                        strong #{searchParameters.lat}, #{searchParameters.long}
+                    li Flights are displayed in ascending order of distance
+        .column 
+            a.button.is-medium.is-fullwidth.is-primary(href="/update") Update flights
+    if flights.length > 0
+        .columns.is-multiline.is-5
+            each flight in flights
+                .column.box.mx-1
+                    table.table.is-striped
+                        tbody 
+                            tr 
+                                th Flight Number 
+                                td
+                                    a.link(href=`https://flightaware.com/live/flight/${flight.ident}`, target="_blank") #{flight.ident}
+                            tr
+                                th Origin
+                                td 
+                                    if (flight.origin !== null && flight.origin.code_icao !== null)
+                                        a.link(href=`https://ourairports.com/airports/${flight.origin.code_icao}/`, target="_blank") #{flight.origin.prettyName}
+                                    else if (flight.origin !== null)
+                                        | #{flight.origin.prettyName}
+                                    else
+                                        p.is-italic Data not available
+                            tr 
+                                th Destination 
+                                td 
+                                    if (flight.destination !== null && flight.destination.code_icao !== null)
+                                        a.link(href=`https://ourairports.com/airports/${flight.destination.code_icao}/`, target="_blank") #{flight.destination.prettyName}
+                                    else if (flight.destination !== null)
+                                        | #{flight.destination.prettyName}
+                                    else
+                                        p.is-italic Data not available
+                            tr
+                                th Aircraft Type
+                                td 
+                                    if (flight.aircraft_type)
+                                        a(href=`https://en.wikipedia.org/wiki/${flight.aircraft_type}`, target="_blank") #{flight.aircraft_type}
+                                    else 
+                                        p.is-italic Data not available
+                            tr 
+                                th Altitude 
+                                td 
+                                    if (flight.last_position)
+                                        | #{flight.last_position.altitude * 100} ft #{flight.last_position.altitudeChangeSymbol}
+                                    else 
+                                        p.is-italic Data not available 
+                            tr
+                                th Distance to aircraft position
+                                td 
+                                    if (flight.last_position !== null)
+                                        | #{flight.last_position.distanceToFlight} nm
+                                    else
+                                        p.is-italic Data not available
+                            tr  
+                                th Bearing to aircraft position
+                                td 
+                                    if (flight.last_position !== null)
+                                        | #{flight.last_position.bearingToFlight}&deg;
+                                    else
+                                        p.is-italic Data not available
+    else
+        .columns
+            .column
+                .notification.is-danger.is-light No flights found
