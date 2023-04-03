@@ -60,11 +60,23 @@ app.get("/update", function(req, res) {
             })
             .catch(function (err) {
                 console.error(err);
+                res.render("error", {
+                    error: JSON.stringify(err)
+                });
             });
     } catch (err) {
         console.error(err);
+        res.render("error", {
+            error: JSON.stringify(err)
+        });
     }
 });
+
+// 404
+app.use(function(req, res) {
+    console.log("404");
+    res.redirect("/");
+})
 
 // start server
 const server = app.listen(process.env.PORT || 4459, function() {
