@@ -1,13 +1,13 @@
 # wtpg
 Where's That Plane Going?
 
-![Docker Image Version (latest by date)](https://img.shields.io/docker/v/tti0/wtpg?label=docker%20version)
+[![Docker Image Version (latest by date)](https://img.shields.io/docker/v/tti0/wtpg?label=docker%20version)](https://hub.docker.com/r/tti0/wtpg)
 
 An simple Express web app to show details of any planes in the sky within a given radius of your location, using data from the FlightAware AeroAPI (https://flightaware.com/commercial/aeroapi/). Perfect to quickly find where a plane you spot in the sky at home is going.
 
 Details of flights are cached locally using node-persist (https://github.com/simonlast/node-persist) to reduce API usage.
 
-Intended to be run on a Raspberry Pi (served to your local network) as a Docker container.
+Intended to be run on a Raspberry Pi (served to your local network) as a Docker container. Docker images are available for `linux/amd64` and `linux/arm/v7`.
 
 ## Usage
 
@@ -23,8 +23,8 @@ All environment variables are mandatory; the app will not start without them bei
 |--------------|----------------------------------------------------------------------------------------------------------------------------|-------------------|
 | PORT         | Integer Port on which web server will run                                                                                  | 4459              |
 | AEROAPI_KEY  | String API key for FlightAware AeroAPI                                                                                     |                   |
-| LAT          | Float Latitude of point around which the app searches for flights, as a signed float (e.g. 2&deg;S = -2)                   |                   |
-| LONG         | Float Longitude of point around which the app searches for flights, as a signed float (e.g. 2&deg;W = -2)                  |                   |
+| LAT          | Float Latitude of point around which the app searches for flights, as a signed float (e.g. 2&deg; S = -2)                   |                   |
+| LONG         | Float Longitude of point around which the app searches for flights, as a signed float (e.g. 2&deg; W = -2)                  |                   |
 | RADIUS_NM    | Float Diagonal radius of a square (in nautical miles) centered on (LAT, LONG) within which the app will search for flights |                   |
 
 ## Licencing
