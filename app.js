@@ -11,6 +11,12 @@ const axios = require("axios");
 const storage = require("node-persist");
 const modifyFlightsArray = require("./lib/modifyFlightsArray.js")
 
+// check environment variables
+if (!process.env.AEROAPI_KEY || !process.env.LAT || !process.env.LONG || !process.env.RADIUS_NM) {
+    console.error("ERROR: One or more environment variables are missing.");
+    process.exit(1);
+};
+
 // initialise storage
 storage.init();
 
