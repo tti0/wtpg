@@ -13,7 +13,7 @@ Intended to be run on a Raspberry Pi (served to your local network) as a Docker 
 
 The project is intended to be run in a Docker container. The latest image is available from Docker Hub (https://hub.docker.com/r/tti0/wtpg).
 
-Use `docker run` or with Docker Compose, making sure to expose port 4459 (the web app is available on this port via HTTP), and setting the correct environment variables:
+Use `docker run` or with Docker Compose, making sure to expose container port 4459 (the web app is available on this port via HTTP), and setting the correct environment variables:
 
 ### Environment variables
 
@@ -21,11 +21,10 @@ All environment variables are mandatory; the app will not start without them bei
 
 | **Variable** | **Description**                                                                                                            | **Default value** |
 |--------------|----------------------------------------------------------------------------------------------------------------------------|-------------------|
-| PORT         | Integer Port on which web server will run                                                                                  | 4459              |
-| AEROAPI_KEY  | String API key for FlightAware AeroAPI                                                                                     |                   |
-| LAT          | Float Latitude of point around which the app searches for flights, as a signed float (e.g. 2&deg; S = -2)                   |                   |
-| LONG         | Float Longitude of point around which the app searches for flights, as a signed float (e.g. 2&deg; W = -2)                  |                   |
-| RADIUS_NM    | Float Diagonal radius of a square (in nautical miles) centered on (LAT, LONG) within which the app will search for flights |                   |
+| AEROAPI_KEY  | String: API key for FlightAware AeroAPI                                                                                     |                   |
+| LAT          | Float: Latitude of point around which the app searches for flights, as a signed float (e.g. 2&deg; S = -2)                   |                   |
+| LONG         | Float: Longitude of point around which the app searches for flights, as a signed float (e.g. 2&deg; W = -2)                  |                   |
+| RADIUS_NM    | Float: Diagonal radius of a square (in nautical miles) centered on (LAT, LONG) within which the app will search for flights |                   |
 
 ## Licencing
 

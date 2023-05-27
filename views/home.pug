@@ -1,7 +1,7 @@
 extends layout 
 
 block content
-    .columns.is-vcentered
+    .columns.is-vcentered.mb-5
         .column 
             .box.content
                 ul
@@ -15,14 +15,17 @@ block content
         .column 
             a.button.is-medium.is-fullwidth.is-primary(href="/update") Update flights
     if flights.length > 0
-        .columns.is-multiline.is-5
+        .columns.is-multiline.is-centered
             each flight in flights
-                .column.box.mx-1
+                .column.box.mx-1.is-one-quarter
                     table.table.is-striped
                         tbody 
                             tr 
                                 th Flight Number 
                                 td
+                                    if (flight.airlineLogoUrl)
+                                        img.mr-2(src=flight.airlineLogoUrl, alt=`Airline logo of ${flight.airlineCodeICAO}`, width="20px", height="20px", style="display: inline; vertical-align: middle;")
+                                    
                                     a.link(href=`https://flightaware.com/live/flight/${flight.ident}`, target="_blank") #{flight.ident}
                             tr
                                 th Origin
@@ -55,6 +58,13 @@ block content
                                     if (flight.last_position)
                                         | #{flight.last_position.altitude * 100} ft #{flight.last_position.altitudeChangeSymbol}
                                     else 
+                                        p.is-italic Data not available 
+                            tr
+                                th Heading
+                                td 
+                                    if (flight.last_position)
+                                        | #{flight.last_position.heading}&deg;
+                                    else
                                         p.is-italic Data not available 
                             tr
                                 th Distance to aircraft position
