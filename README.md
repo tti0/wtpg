@@ -11,9 +11,9 @@ Intended to be run on a Raspberry Pi (served to your local network) as a Docker 
 
 ## Usage
 
-The project is intended to be run in a Docker container. The latest image is available from Docker Hub (https://hub.docker.com/r/tti0/wtpg).
+The project is intended to be run in a Docker container. The latest image is available from Docker Hub (https://hub.docker.com/r/tti0/wtpg), as `tti0/wptg:latest`, or specifying a version number.
 
-Use `docker run` or with Docker Compose, making sure to expose container port 4459 (the web app is available on this port via HTTP), and setting the correct environment variables:
+Use `docker run` or with Docker Compose, making sure to expose container port 4459 (the web app is available on this port via HTTP), and setting the correct environment variables, as below.
 
 ### Environment variables
 

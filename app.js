@@ -40,7 +40,8 @@ app.get("/", async function (req, res) {
             lat: process.env.LAT,
             long: process.env.LONG,
             radius: process.env.RADIUS_NM
-        }
+        },
+        wtpgVersion: process.env.npm_package_version
     });
 });
 
