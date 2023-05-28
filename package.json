@@ -1,6 +1,6 @@
 {
   "name": "wtpg",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Where's That Plane Going?",
   "main": "app.js",
   "repository": "https://github.com/tti0/wtpg",
