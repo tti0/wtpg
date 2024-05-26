@@ -4,7 +4,7 @@
 
 [![Docker Image Version (latest by date)](https://img.shields.io/docker/v/tti0/wtpg?label=docker%20version)](https://hub.docker.com/r/tti0/wtpg)
 
-An simple NodeJS and Express web app to show details of any planes in the sky within a given radius of your location, using data from the [FlightAware AeroAPI](https://flightaware.com/commercial/aeroapi/). Perfect to quickly find where a plane you spot in the sky at home is going.
+A simple NodeJS and Express web app to show details of any planes in the sky within a given radius of your location, using data from the [FlightAware AeroAPI](https://flightaware.com/commercial/aeroapi/). Perfect to quickly find where a plane you spot in the sky at home is going.
 
 <img src="wtpg_screenshot.png" alt="A screenshot of a web interface. Black text on a white background. The title is 'Where's That Plane Going?' alongside an aeroplane emoji. The subtitle is 'A list of nearby flights, according to FlightAware data'. In the first row, there is a box containing the text: 'Last updated at Sun May 26 2024 11:35:18 GMT+0000 (Coordinated Universal Time); Searching for flights within a 30 nm (square) radius of 50.352, -1.056; Flights are displayed in ascending order of distance'. Alongside this is a button labelled 'Update flights', with white text on a cyan background. In the second row, there are 3 parallel boxes, each containing a table with data about a single flight. These data are: Flight number, Origin, Destination, Aircraft Type, Altitude, Heading, Distance to aircraft position, Bearing to aircraft position." width="650px" style="border: 2px solid grey"/>
 
