@@ -1,6 +1,6 @@
 {
   "name": "wtpg",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Where's That Plane Going?",
   "main": "app.js",
   "repository": "https://github.com/tti0/wtpg",
@@ -8,6 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^1.6.2",
+    "braces": "^3.0.3",
     "bulma": "^0.9.4",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
