@@ -1,5 +1,14 @@
 # wtpg
 
+---
+
+# ⚠️ Deprecation notice
+
+This project is no longer maintained. Please see a Rust re-write of _Where's That Plane Going?_
+here, which is maintained: https://gitlab.com/tti0/wtpg-rs
+
+---
+
 ✈️ Where's That Plane Going?
 
 [![Docker Image Version (latest by date)](https://img.shields.io/docker/v/tti0/wtpg?label=docker%20version)](https://hub.docker.com/r/tti0/wtpg)
